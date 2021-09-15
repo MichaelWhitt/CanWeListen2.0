@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Navbar, NavbarBrand } from 'reactstrap';
-import Directory from './components/DirectoryComponent';
+
 import './App.css';
+import Main from './components/MainComponent';
 
 class App extends Component {
   render() {
@@ -9,10 +10,10 @@ class App extends Component {
       <div className="App">
         <Navbar dark color="primary">
           <div className="container">
-            <NavbarBrand href="/">Can We Listen</NavbarBrand>
+            <NavbarBrand href="/">Can We Listenaaa</NavbarBrand>
           </div>
         </Navbar>
-        <Directory />
+        <Main/>
       </div>
     )
   }

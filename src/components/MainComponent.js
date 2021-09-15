@@ -1,33 +1,30 @@
 import React, { Component } from 'react';
 import Directory from './DirectoryComponent';
 import Header from './HeaderComponent';
+import { Route } from 'react-router';
+import { Switch } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import Footer from './FooterComponent';
-import MapPage from './MapComponent';
 
-class Main extends Component {
-  constructor(props) {
-    this.state = {
-      accounts: ACCOUNTS,
-    };
-  }
-  render () {
-    const HomePage = () => {
-      return (
-        <Home accounts={this.state.accounts.filter(accounts => accounts.featured)[0]} 
-        />
-      );
-    }
+
+function Main(props){
+
+  
+    
     return (
       <div>
+        
+        <BrowserRouter>
         <Header />
           <Switch>
-            <Route path='/home' component={HomePage} />
-            <Route exact path='/directory' render={() => <Directory accounts={this.state.accounts} />} />
-            <Route path='/map' component={MapPage} />
+            <Route path='/home'  />
+            <Route exact path='/directory' render={() => <Directory />} />
           </Switch>
-        <Footer />
+          <Footer/>
+          </BrowserRouter>
+        
       </div>
     );
-  }
+
 }
 export default Main;
