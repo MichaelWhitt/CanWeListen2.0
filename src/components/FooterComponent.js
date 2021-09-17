@@ -17,7 +17,7 @@ function Footer(props) {
               
           </Col>
           <Col>
-            <img src="/assets/images/CanWeListenLogo2.png" alt="cwl" width="90" height="90" />
+            <img src="/assets/images/CanWeListenLogo2.png" alt="cwl" width="120" height="120" />
           </Col>
         </Row>
       </Jumbotron>

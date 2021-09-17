@@ -9,9 +9,12 @@ function Header(props) {
         <Jumbotron fluid className="mb-0">
           <div className="container">
             <div className="row">
-              <div className="col">
+              <div className="col col-9">
                 <h1>Can We Listen</h1>
                 <h2>An ally site for friends with hearing loss</h2>
+              </div>
+              <div className="col">
+              <img src="/assets/images/CanWeListenLogo2.png" height="240" width="240" alt="Theatre" />
               </div>
             </div>
           </div>
