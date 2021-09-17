@@ -19,6 +19,31 @@ function Main(props) {
           <Route exact path='/directory' render={() => <Directory />} />
           <Route exact path='/search' render={() => <SearchPage />} />
         </Switch>
+        <div className="container">
+          <div className="row">
+          <h1>Can We Listen?</h1>
+          <h3>Have you ever wondered what resources are 
+              out there for people with hearing loss?</h3>
+          </div>
+          <div className="row">
+            <div className="col">
+              <h3>Who are we for?</h3>
+              <p>Our goal is to provide a service to our friends with hearing loss, 
+              their friends, or anyone who would like to contribute to our ratings,
+              feedback forums, and help others to have a better entertainment experience.</p>
+            </div>
+            <div className="col">
+              <h3>What we do</h3>
+              <p>We provide friends with hearing loss a resource to check out
+              entertainment venues and their resources, before they go out.</p>
+            </div>
+            <div className="col">
+              <h3>How it works</h3>
+              <p>Before you go out, search the venue, and check out the rating, 
+              check out the devices, the feedback of previous customers, etc.</p>
+            </div>
+          </div>
+        </div>
         <Footer />
       </BrowserRouter>
     </div>
