@@ -7,14 +7,7 @@ import Main from './components/MainComponent';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">Can We Listen</NavbarBrand>
-          </div>
-        </Navbar>
         <Main/>
-      </div>
     )
   }
 }
