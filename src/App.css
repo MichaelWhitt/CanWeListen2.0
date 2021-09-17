@@ -117,3 +117,14 @@ h2 {
     left: 3%;
     z-index: 99;
 }
+
+.nav {
+  background-color: #2a9d8f;
+  border: solid;
+  border-color: #2a9d8f;
+  color: whitesmoke;
+}
+
+.navlink {
+  color: whitesmoke;
+}

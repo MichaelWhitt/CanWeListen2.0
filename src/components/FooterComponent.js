@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Col, Row, List, ListGroupItemHeading } from 'reactstrap';
+import { Col, Row  } from 'reactstrap';
 import Jumbotron from 'reactstrap/lib/Jumbotron';
 
 function Footer(props) { 

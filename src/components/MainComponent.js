@@ -19,6 +19,7 @@ function Main(props) {
           <Route exact path='/directory' render={() => <Directory />} />
           <Route exact path='/search' render={() => <SearchPage />} />
         </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );
