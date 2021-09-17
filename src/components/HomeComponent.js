@@ -6,8 +6,8 @@ function Home(props) {
         <div className="container">
             <div className="row">
                 <div className="col-md m-1">
-                    <img src="/assets/images/CanWeListen.png"
-                    height="500" width="700" alt="PLU Logo" /> 
+                    <img src="/assets/images/CanWeListenLogo2.png"
+                    height="500" width="700" alt="CanWeListenLogo2" /> 
                 </div>
             </div>
         </div>
