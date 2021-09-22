@@ -5,6 +5,7 @@ import { Route } from 'react-router';
 import { Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import Footer from './FooterComponent';
+import Account from './AccountComponent';
 import SearchPage from './SearchComponent'
 
 
@@ -16,6 +17,7 @@ function Main(props) {
         <Switch>
           <Route path='/home' />
           <Route exact path='/directory' render={() => <Directory />} />
+          <Route path='/account' render={() => <Account/>}/>
           <Route exact path='/search' render={() => <SearchPage />} />
         </Switch>
       </BrowserRouter>

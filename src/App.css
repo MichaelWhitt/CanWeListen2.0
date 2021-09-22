@@ -117,3 +117,8 @@ h2 {
     left: 3%;
     z-index: 99;
 }
+
+#accountTopDiv{
+  background-color: #808a9f; height: 60px;
+}
+
