@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, setState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, CardBody, Button, CardTitle, CardText, Row, Col, Container, UncontrolledCollapse } from 'reactstrap';
 import classnames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,10 +7,14 @@ import ContributionForm from './ContributionForm';
 
 
 
+
 const AddContributionForm = () => (
+
+
     <div>
+      
       <Button color="success" id="toggler" className="mt-5">
-        Show Form
+        Show Formv
       </Button>
       <UncontrolledCollapse toggler="#toggler">
         <ContributionForm/>
@@ -20,10 +24,25 @@ const AddContributionForm = () => (
 
 const AccountTabs = (props) => {
   const [activeTab, setActiveTab] = useState('1');
+  const [email, setEmail] = useState("connect@michaeldwhitt.com")
+  
+
+  const newInput = () =>{
+    setEmail(
+      <>
+        <input placeholder="email" onChange={handleChange} ></input><button>Submit</button>
+      </>
+    );
+  }
+
+  const handleChange = (e) => {
+    setState({value: e.target.value});
+  }
 
   const toggle = tab => {
     if(activeTab !== tab) setActiveTab(tab);
-  }
+  };
+
 
   return (
     <div>
@@ -57,14 +76,15 @@ const AccountTabs = (props) => {
 
       <TabContent activeTab={activeTab}>
         <TabPane tabId="1">
+
           <Row>
             <Col sm="12">
                 <Container className="mt-5">
                     <Row>
                         <hr/>
                         <Col sm="2" ><b>Email:</b></Col>
-                        <Col sm="8"  id="emailText">connect@michaeldwhitt.com</Col>
-                        <Col className="pb-2" id="emailDiv"><Button className="btn btn-sm" color="primary" id='emailEdit' onclick="changeEmail()">Edit</Button></Col>
+                        <Col sm="8"  id="emailText">{email}</Col>
+                        <Col className="pb-2" id="emailDiv"><Button className="btn btn-sm" color="primary" id='emailEdit' onClick={newInput}>Edit</Button></Col>
                     </Row>
                     <Row>
                         <hr/>
