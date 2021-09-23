@@ -4,39 +4,35 @@ import classnames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faChartPie, faClipboard } from '@fortawesome/free-solid-svg-icons';
 import ContributionForm from './ContributionForm';
+import EditForm from './EditInput';
 
 
 
 
 const AddContributionForm = () => (
 
-
     <div>
-      
       <Button color="success" id="toggler" className="mt-5">
-        Show Formv
+        Show Form
       </Button>
       <UncontrolledCollapse toggler="#toggler">
         <ContributionForm/>
       </UncontrolledCollapse>
     </div>
-  );
+);
 
 const AccountTabs = (props) => {
   const [activeTab, setActiveTab] = useState('1');
-  const [email, setEmail] = useState("connect@michaeldwhitt.com")
-  
+  const [addData, addStaticData] = useState({
+    email: "connect@michaeldwhitt.com",
+    location: "",
+    phone: ""
+  })
 
-  const newInput = () =>{
-    setEmail(
+  const newInput = (e) =>{
       <>
-        <input placeholder="email" onChange={handleChange} ></input><button>Submit</button>
+        {addStaticData({ email: addData.location})}
       </>
-    );
-  }
-
-  const handleChange = (e) => {
-    setState({value: e.target.value});
   }
 
   const toggle = tab => {
@@ -82,23 +78,27 @@ const AccountTabs = (props) => {
                 <Container className="mt-5">
                     <Row>
                         <hr/>
-                        <Col sm="2" ><b>Email:</b></Col>
-                        <Col sm="8"  id="emailText">{email}</Col>
-                        <Col className="pb-2" id="emailDiv"><Button className="btn btn-sm" color="primary" id='emailEdit' onClick={newInput}>Edit</Button></Col>
+                        <Col sm="5" ><b >Email: </b></Col>
+                        <Col sm="5"  id="emailText">{addData.email}</Col>
+                        <Col sm="2" className="pb-2" id="emailDiv"><Button className="btn btn-sm" color="primary" id='emailEdit' >Edit</Button></Col>
+                        
                     </Row>
+                    <UncontrolledCollapse className="text-right mt-3 mb-3" toggler="#emailEdit">
+                      <EditForm ph={"Edit Email"} props={addData}/>
+                    </UncontrolledCollapse>
                     <Row>
                         <hr/>
-                        <Col sm="2"><b>Location:</b></Col>
-                        <Col sm="8"  id="locationText">Dallas, TX</Col>
+                        <Col sm="5"><b>Location:</b></Col>
+                        <Col sm="5"  id="locationText">{addData.location}</Col>
                         <Col sm="2" className="pb-2" id="locationDiv"><Button className="btn btn-sm" color="primary" id="locationEdit" onclick="changeLocation()">Edit</Button></Col>
                     </Row>
                     <Row>
                         <hr/>
-                        <Col sm="2"><b>LinkedIn:</b></Col>
-                        <Col sm="8"  id="linkedInTextDiv">
-                            <a id="linkedInText" href="https://www.linkedin.com/in/michael-whitt-6514b475/">Michael Whitt</a>
+                        <Col sm="5"><b>Phone:</b></Col>
+                        <Col sm="5"  id="phoneText">
+                            {addData.phone}
                         </Col>
-                        <Col sm="2" className="pb-2" id="linkedInDiv"><Button className="btn btn-sm" color="primary" id="linkedInEdit" onclick="changeLinkedIn()">Edit</Button></Col>
+                        <Col sm="2" className="pb-2" id="phoneText"><Button className="btn btn-sm" color="primary" id="phoneEdit" onclick="changePhone()">Edit</Button></Col>
                         <hr/>
                     </Row>
                 </Container>
