@@ -1,10 +1,11 @@
 import React, { useState, setState } from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, CardBody, Button, CardTitle, CardText, Row, Col, Container, UncontrolledCollapse } from 'reactstrap';
+import {Card, Form, CardBody, Button, CardTitle, CardText, Row, Col, Container, UncontrolledCollapse } from 'reactstrap';
 import classnames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faChartPie, faClipboard } from '@fortawesome/free-solid-svg-icons';
 import ContributionForm from './ContributionForm';
-import EditForm from './EditInput';
+import { Component } from 'react';
+
 
 
 
@@ -21,57 +22,36 @@ const AddContributionForm = () => (
     </div>
 );
 
-const AccountTabs = (props) => {
-  const [activeTab, setActiveTab] = useState('1');
-  const [addData, addStaticData] = useState({
-    email: "connect@michaeldwhitt.com",
-    location: "",
-    phone: ""
-  })
-
-  const newInput = (e) =>{
-      <>
-        {addStaticData({ email: addData.location})}
-      </>
+class AccountTabs extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      email: "connect@michaeldwhitt.com",
+      location: "Dallas, TX",
+      phone: "530-551-2010"
+    }
   }
 
-  const toggle = tab => {
-    if(activeTab !== tab) setActiveTab(tab);
-  };
+  onEmailSubmit = (event) => {
+    event.preventDefault();
+    alert(`Updated Email: ${this.state.email}`)
+  }
+
+  onLocationSubmit = (event) => {
+    event.preventDefault();
+    alert(`Updated Location: ${this.state.location}`)
+  }
+
+  onPhoneSubmit = (event) => {
+    event.preventDefault();
+    alert(`Updated Phone: ${this.state.phone}`)
+  }
 
 
+  render(){
   return (
-    <div>
-        
-      <Nav tabs>
-        <NavItem>
-          <NavLink
-            className={classnames({ active: activeTab === '1' })}
-            onClick={() => { toggle('1'); }}
-          >
-            <FontAwesomeIcon icon={faUser}/> Account
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink
-            className={classnames({ active: activeTab === '2' })}
-            onClick={() => { toggle('2'); }}
-          >
-            <FontAwesomeIcon icon={faChartPie}/> Contributions
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink
-            className={classnames({ active: activeTab === '3' })}
-            onClick={() => { toggle('3'); }}
-          >
-            <FontAwesomeIcon icon={faClipboard}/> Other
-          </NavLink>
-        </NavItem>
-      </Nav>
-
-      <TabContent activeTab={activeTab}>
-        <TabPane tabId="1">
+    <div> 
+        <div>
 
           <Row>
             <Col sm="12">
@@ -79,34 +59,49 @@ const AccountTabs = (props) => {
                     <Row>
                         <hr/>
                         <Col sm="5" ><b >Email: </b></Col>
-                        <Col sm="5"  id="emailText">{addData.email}</Col>
+                        <Col sm="5"  id="emailText">{this.state.email}</Col>
                         <Col sm="2" className="pb-2" id="emailDiv"><Button className="btn btn-sm" color="primary" id='emailEdit' >Edit</Button></Col>
                         
                     </Row>
                     <UncontrolledCollapse className="text-right mt-3 mb-3" toggler="#emailEdit">
-                      <EditForm ph={"Edit Email"} props={addData}/>
+                    <Form onSubmit={(event) => this.setState(this.onEmailSubmit(event))}>
+                      <input type="text" name="emailInputName" onChange={e => this.setState({email: e.target.value})}></input>
+                      <button type="submit">Submit</button>
+                    </Form>
                     </UncontrolledCollapse>
                     <Row>
                         <hr/>
                         <Col sm="5"><b>Location:</b></Col>
-                        <Col sm="5"  id="locationText">{addData.location}</Col>
+                        <Col sm="5"  id="locationText">{this.state.location}</Col>
                         <Col sm="2" className="pb-2" id="locationDiv"><Button className="btn btn-sm" color="primary" id="locationEdit" onclick="changeLocation()">Edit</Button></Col>
                     </Row>
+                    <UncontrolledCollapse className="text-right mt-3 mb-3" toggler="#locationEdit">
+                    <Form onSubmit={(event) => this.setState(this.onLocationSubmit(event))}>
+                      <input type="text" name="locationInputName" onChange={e => this.setState({location: e.target.value})}></input>
+                      <button type="submit">Submit</button>
+                    </Form>
+                    </UncontrolledCollapse>
                     <Row>
                         <hr/>
                         <Col sm="5"><b>Phone:</b></Col>
                         <Col sm="5"  id="phoneText">
-                            {addData.phone}
+                            {this.state.phone}
                         </Col>
                         <Col sm="2" className="pb-2" id="phoneText"><Button className="btn btn-sm" color="primary" id="phoneEdit" onclick="changePhone()">Edit</Button></Col>
                         <hr/>
                     </Row>
+                    <UncontrolledCollapse className="text-right mt-3 mb-3" toggler="#phoneEdit">
+                    <Form onSubmit={(event) => this.setState(this.onPhoneSubmit(event))}>
+                      <input type="text" name="phoneInputName" onChange={e => this.setState({phone: e.target.value})}></input>
+                      <button type="submit">Submit</button>
+                    </Form>
+                    </UncontrolledCollapse>
                 </Container>
             </Col>
           </Row>
-        </TabPane>
+        </div>
 
-        <TabPane tabId="2">
+        <div>
             <h1 className="mt-3 text-left">Contributions</h1>
           <Row className="mt-2">
             <Col sm="4" className="mt-2">
@@ -135,9 +130,9 @@ const AccountTabs = (props) => {
             </Col>
           </Row>
           <AddContributionForm/>
-        </TabPane>
+        </div>
 
-        <TabPane tabId="3">
+        <div tabId="3">
           <Row>
             <Col sm="6">
               <Card body>
@@ -154,12 +149,11 @@ const AccountTabs = (props) => {
               </Card>
             </Col>
           </Row>
-        </TabPane>
-        
-      </TabContent>
-      
+        </div>
     </div>
+    
   );
+}
 }
 
 export default AccountTabs;
