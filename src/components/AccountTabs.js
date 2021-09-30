@@ -1,26 +1,9 @@
-import React, { useState, setState } from 'react';
-import {Card, Form, CardBody, Button, CardTitle, CardText, Row, Col, Container, UncontrolledCollapse } from 'reactstrap';
-import classnames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faChartPie, faClipboard } from '@fortawesome/free-solid-svg-icons';
-import ContributionForm from './ContributionForm';
+import React from 'react';
+import {Card, Form, Button, CardTitle, CardText, Row, Col, Container, UncontrolledCollapse } from 'reactstrap';
 import { Component } from 'react';
+import AddContributionForm from './AddContributionForm';
 
 
-
-
-
-const AddContributionForm = () => (
-
-    <div>
-      <Button color="success" id="toggler" className="mt-5">
-        Show Form
-      </Button>
-      <UncontrolledCollapse toggler="#toggler">
-        <ContributionForm/>
-      </UncontrolledCollapse>
-    </div>
-);
 
 class AccountTabs extends Component {
   constructor(props){
