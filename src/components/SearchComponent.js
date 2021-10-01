@@ -1,3 +1,6 @@
+//npm i @tomtom-international/web-sdk-maps
+//npm i @tomtom-international/web-sdk-services
+
 
 import React, { useEffect, useState } from 'react';
 import '@tomtom-international/web-sdk-maps/dist/maps.css';
@@ -15,7 +18,7 @@ function SearchPage() {
     const [map, setMap] = useState(null);
 
     const APIKEY = "OTesSbZQ5Tvq0TUHV8gKbv2ecpFPAaz2";
-    const Dallas = [-96.79621, 32.77798];
+    const Dallas = [-97.733330, 30.266666];
 
 
     //tt.setProductInfo('<your-product-name>', '<your-product-version>');
@@ -47,9 +50,10 @@ function SearchPage() {
                 // markerEl.style.backgroundImage = 'components/CanWeListen.png';
 
                 const marker = new tt.Marker().setLngLat(result.results[x].position).addTo(map);
+
                 const currData = result.results[x];
                 setSearchData(setSearchData => [...setSearchData, currData])
-                // setSearchData({currData});
+
                 //creates popup on map
                 // var popupOffsets = {
                 //     top: [0, 0],
@@ -59,6 +63,7 @@ function SearchPage() {
                 //     left: [25, -35],
                 //     right: [-25, -35]
                 //   }
+                //
                 //   var popup = new tt.Popup({offset: popupOffsets}).setHTML("your company name, your company address");
                 //   marker.setPopup(popup).togglePopup();
             }
@@ -66,7 +71,7 @@ function SearchPage() {
     }
 
     const search = function () {
-        services.fuzzySearch({
+        services.poiSearch({
             key: APIKEY,
             query: searchName,
             boundingBox: map.getBounds()
@@ -77,6 +82,7 @@ function SearchPage() {
     const handleInputChange = (event) => {
         setSearchName(event.target.value)
     }
+
     return (
         <Container fluid>
             <Row className="searchRow" id="searchDiv">
