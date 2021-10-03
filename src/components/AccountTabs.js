@@ -3,21 +3,24 @@ import {Card, Form, Button, CardTitle, CardText, Row, Col, Container, Uncontroll
 import { Component } from 'react';
 import AddContributionForm from './AddContributionForm';
 
-
-
 class AccountTabs extends Component {
   constructor(props){
     super(props);
     this.state = {
-      email: "connect@michaeldwhitt.com",
-      location: "Dallas, TX",
-      phone: "530-551-2010"
+      email: "",
+      location: "",
+      phone: "",
+      selected: false
     }
   }
 
+  
   onEmailSubmit = (event) => {
+    console.log(event)
+    console.log(event.target)
+    console.log(event.target.value)
     event.preventDefault();
-    alert(`Updated Email: ${this.state.email}`)
+    // alert(`Updated Email: ${this.state.email}`)
   }
 
   onLocationSubmit = (event) => {
@@ -31,27 +34,30 @@ class AccountTabs extends Component {
   }
 
 
+
+
   render(){
   return (
     <div> 
         <div>
-
           <Row>
             <Col sm="12">
                 <Container className="mt-5">
                     <Row>
                         <hr/>
                         <Col sm="5" ><b >Email: </b></Col>
-                        <Col sm="5"  id="emailText">{this.state.email}</Col>
-                        <Col sm="2" className="pb-2" id="emailDiv"><Button className="btn btn-sm" color="primary" id='emailEdit' >Edit</Button></Col>
+                        <Col sm="5"  id="emailText">{this.state.email === "" ? <input type='text' ></input> : this.state.email }</Col>
                         
+                        <Col sm="2" className="pb-2" id="emailDiv" >
+                          <Button className="btn btn-sm" color="primary" id='emailEdit' >Edit</Button>
+                        </Col>
                     </Row>
-                    <UncontrolledCollapse className="text-right mt-3 mb-3" toggler="#emailEdit">
+                    {/* <UncontrolledCollapse className="text-right mt-3 mb-3" toggler="#emailEdit">
                     <Form onSubmit={(event) => this.setState(this.onEmailSubmit(event))}>
                       <input type="text" name="emailInputName" onChange={e => this.setState({email: e.target.value})}></input>
                       <button type="submit">Submit</button>
                     </Form>
-                    </UncontrolledCollapse>
+                    </UncontrolledCollapse> */}
                     <Row>
                         <hr/>
                         <Col sm="5"><b>Location:</b></Col>
