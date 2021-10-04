@@ -7,7 +7,7 @@ class AccountTabs extends Component {
   constructor(props){
     super(props);
     this.state = {
-      email: "",
+      email: "connect@michaeldwhitt.com",
       location: "",
       phone: "",
       selected: false
