@@ -10,7 +10,10 @@ class AccountTabs extends Component {
       email: "connect@michaeldwhitt.com",
       location: "",
       phone: "",
-      selected: false
+      selected: false,
+      contributions: 0,
+      level: 0,
+      contributionsToLevel: 0
     }
   }
 
