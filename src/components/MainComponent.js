@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Footer from './FooterComponent';
 import Account from './AccountComponent';
 import SearchPage from './SearchComponent'
+import ClickDisplay from './ClickDisplayComponent';
 
 
 function Main(props) {
@@ -19,6 +20,7 @@ function Main(props) {
           <Route exact path='/directory' render={() => <Directory />} />
           <Route path='/account' render={() => <Account/>}/>
           <Route exact path='/search' render={() => <SearchPage />} />
+          <Route exact path='/searchItemDisplay' component={ClickDisplay} />
         </Switch>
       </BrowserRouter>
     </div>

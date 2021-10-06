@@ -1,24 +1,40 @@
 //npm i @tomtom-international/web-sdk-maps
 //npm i @tomtom-international/web-sdk-services
 
-
 import React, { useEffect, useState } from 'react';
 import '@tomtom-international/web-sdk-maps/dist/maps.css';
 import tt from '@tomtom-international/web-sdk-maps';
 import { services } from '@tomtom-international/web-sdk-services';
-import { Row, Col, Container, ListGroup, Card } from 'reactstrap';
-import ResultItem from './ResultDisplayComponent';
+import { Row, Col, Container, ListGroup } from 'reactstrap';
+import SearchResults from './ResultComponent';
 
+
+
+function DisplaySearch({ data }) {
+    // console.log(data);
+    if (data.length > 0) {
+        return data.map((searchItem) => {
+            // console.log(searchItem);
+            return (
+                <SearchResults key={searchItem.id} data={searchItem} />
+            );
+        })
+    }
+    else {
+        return (
+            <div />
+        );
+    }
+}
 
 function SearchPage() {
-
-    //array destructering
+    //State
     const [searchName, setSearchName] = useState("");
     const [searchData, setSearchData] = useState([]);
     const [map, setMap] = useState(null);
 
     const APIKEY = "OTesSbZQ5Tvq0TUHV8gKbv2ecpFPAaz2";
-    const Dallas = [-97.733330, 30.266666];
+    const mapCenter = [-97.733330, 30.266666];
 
 
     //tt.setProductInfo('<your-product-name>', '<your-product-version>');
@@ -27,11 +43,14 @@ function SearchPage() {
         const createdMap = tt.map({
             key: APIKEY,
             container: "mapContainer",
-            center: Dallas,
+            center: mapCenter,
             zoom: 14
         });
         setMap(createdMap);
     }, [])
+
+    //Console log search data
+    // useEffect(() => console.log(searchData), [searchData])
 
     // var moveMap = function (lnglat) {
     //     map.flyTo({
@@ -40,8 +59,10 @@ function SearchPage() {
     //     })
     // }
 
-    const handleResults = function (result) {
+    const handleResults = async function (result) {
         if (result) {
+            //Array to hold finished data
+            const currData = [];
             for (let x = 0; x < result.results.length; x++) {
 
                 //creates custom marker on map => {element: markerEl, anchor: 'center'} paste into tt.Marker
@@ -51,10 +72,9 @@ function SearchPage() {
 
                 const marker = new tt.Marker().setLngLat(result.results[x].position).addTo(map);
 
-                const currData = result.results[x];
-                setSearchData(setSearchData => [...setSearchData, currData])
+                currData.push(result.results[x]);
 
-                //creates popup on map
+                // creates popup on map
                 // var popupOffsets = {
                 //     top: [0, 0],
                 //     bottom: [0, -70],
@@ -62,14 +82,19 @@ function SearchPage() {
                 //     'bottom-left': [0, -70],
                 //     left: [25, -35],
                 //     right: [-25, -35]
-                //   }
-                //
-                //   var popup = new tt.Popup({offset: popupOffsets}).setHTML("your company name, your company address");
-                //   marker.setPopup(popup).togglePopup();
+                // }
+
+                // var popup = new tt.Popup({ offset: popupOffsets }).setHTML("your company name, your company address");
+                // marker.setPopup(popup).togglePopup();
             }
+            //Code to push the captured data to the state hook
+            console.log(currData);
+            setSearchData(currData)
         }
     }
 
+
+    //"Cinema" - most accurate term for TomTom
     const search = function () {
         services.poiSearch({
             key: APIKEY,
@@ -83,27 +108,26 @@ function SearchPage() {
         setSearchName(event.target.value)
     }
 
+
+
     return (
         <Container fluid>
             <Row className="searchRow" id="searchDiv">
                 <Col md className="px-0">
                     <div className="searchFieldBtn">
-                        <input type="text" id="query" value={searchName} onChange={handleInputChange} placeholder='Ex: "Theater"' />
+                        <input type="text" id="query" value={searchName} onChange={handleInputChange} placeholder='Ex: "Cinema"' />
                         <button onClick={search} id='searchBtn' autofill="off" autocomplete="off">Search</button>
                     </div>
                     <div id="mapContainer" className="mapContainer"></div>
                 </Col>
                 <Col md className="resultsList">
                     <ListGroup>
-                        {searchData.length < 10 ? <div /> : <ResultItem data={searchData} />}
+                        <DisplaySearch data={searchData} />
                     </ListGroup>
                 </Col>
             </Row>
         </Container>
     )
 }
-
-
-
 
 export default SearchPage;
