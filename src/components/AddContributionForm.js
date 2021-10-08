@@ -4,9 +4,9 @@ import ContributionForm from './ContributionForm';
 
 const AddContributionForm = (props) => (
 
-    <div>
+    <div style={{textAlign: 'center'}}>
       <Button color="success" id="toggler" className="mt-5">
-        Show Form
+        Add Contribution
       </Button>
       <UncontrolledCollapse toggler="#toggler">
         <ContributionForm/>

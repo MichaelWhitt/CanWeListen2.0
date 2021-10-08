@@ -60,7 +60,7 @@ h1, h2, h3, .card-body>.card-title {
 }
 
 h2 {
-  color: #e76f51ff;
+  color: black !important;
 }
 
 .card-img-overlay .card-title {
