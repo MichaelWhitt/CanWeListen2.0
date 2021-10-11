@@ -14,7 +14,7 @@ function ClickDisplay(props) {
 
     return (
         <Container>
-            <Jumbotron>
+            <Jumbotron className="px-5">
                 <h1 className="display-3">{data.poi.name}</h1>
                 <p className="lead">{data.address.freeformAddress} |
                     <Rating className=""
@@ -27,7 +27,8 @@ function ClickDisplay(props) {
                 <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
             </Jumbotron>
             <Row className="justify-content-center">
-                    <CommentDisplay/>
+                    <Col></Col>
+                    <Col><CommentDisplay/></Col>
             </Row>
         </Container>
     );

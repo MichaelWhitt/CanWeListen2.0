@@ -12,7 +12,7 @@ function SearchResults(props) {
     const data = props.data;
     //Current rands for generating location info
     const randRating = Math.floor((Math.random() * 5) + 1);
-    const randComp = Math.random() < 0.6;
+    //Decides if there is accommodations randomly.
     const randAccom = Math.random() < 0.6;
 
 
@@ -43,15 +43,15 @@ function SearchResults(props) {
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{data.poi.phone}</CardSubtitle>
 
                     <CardText>ADA Title III Compliance: {randBool() === true ? 'Yes' : 'No'}</CardText>
-                    <CardText>Accommodation: {randBool() === true ? 'Yes' : 'No'}</CardText>
+                    <CardText>Accommodation: {randAccom === true ? 'Yes' : 'No'}</CardText>
                     <CardText>
                         Accommodations Available:
-                        {randBool() === true ? <li className='ml-3'>Assisted Listening Device</li> : ''}
-                        {randBool() === true ? <li className='ml-3'>Closed Caption Device</li> : ''}
+                        {randAccom && randBool() === true ? <li className='ml-3'>Assisted Listening Device</li> : ''}
+                        {randAccom && randBool() === true ? <li className='ml-3'>Closed Caption Device</li> : ''}
                     </CardText>
                     <CardText>Accommodation Type:
-                        {randBool() === true ? <li className='ml-3'> CCD - Handheld, Cupholder, On-Screen, Glasses </li> : ''}
-                        {randBool() === true ? <li className='ml-3'> ALD - In-ear, Over-Ear,  Personal Hearing Device Pairing</li> : ''}
+                        {randAccom && randBool() === true ? <li className='ml-3'> CCD - Handheld, Cupholder, On-Screen, Glasses </li> : ''}
+                        {randAccom && randBool() === true ? <li className='ml-3'> ALD - In-ear, Over-Ear,  Personal Hearing Device Pairing</li> : ''}
                     </CardText>
                     <CardText>Accommodation Rating: <Rating
                         readonly

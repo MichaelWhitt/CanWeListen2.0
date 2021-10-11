@@ -44,6 +44,7 @@ h2 {
 }
 
 .headerJumbo {
+  height: 10vh;
   margin: 0;
   padding: 1rem;
   background: linear-gradient(120deg, #264653ff, #2a9d8fff);

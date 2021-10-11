@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Toast, ToastHeader, ToastBody } from 'reactstrap';
 import { COMMENTS } from '../shared/comments';
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, CardHeader } from 'reactstrap';
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, CardHeader, CardFooter } from 'reactstrap';
 
 
 function CommentDisplay() {
@@ -50,10 +50,10 @@ function CommentDisplay() {
                     </ToastBody>
                 </Toast> */}
 
-                <Card class="w-50 p-3">
+                <Card class="w-50 p-3 mb-2">
                     <CardHeader>
                         <Avatar size="50" src='https://retailx.com/wp-content/uploads/2019/12/iStock-476085198.jpg' />
-                        <div><strong>{comment.author}</strong></div>
+                        <CardTitle className='font-weight-bold'>{comment.author}</CardTitle>
                         <div>Level {comment.level} Contributor</div>
                     </CardHeader>
                     <CardBody>
@@ -65,7 +65,9 @@ function CommentDisplay() {
                                 initialRating={comment.rating}
                             />
                         </div>
-                        {comment.text}</CardBody>
+                        {comment.text}
+                    </CardBody>
+                    <CardFooter className="text-right bg-white p-1">Posted: {comment.date}</CardFooter>
                 </Card>
             </React.Fragment>
         ))
