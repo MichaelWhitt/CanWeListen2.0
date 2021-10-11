@@ -88,7 +88,7 @@ function SearchPage() {
                 // marker.setPopup(popup).togglePopup();
             }
             //Code to push the captured data to the state hook
-            console.log(currData);
+            // console.log(currData);
             setSearchData(currData)
         }
     }

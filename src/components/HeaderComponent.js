@@ -9,7 +9,7 @@ function Header(props) {
   
     return (
       <React.Fragment>
-        <Jumbotron fluid className="mb-0">
+        <Jumbotron fluid className="mb-0 headerJumbo">
           <Nav  className="font-weight-bold py-4 px-2 mb-4">
             <NavItem>
               <NavLink to={"/home"}>Home</NavLink>
