@@ -22,7 +22,6 @@ const AccountContributions = () => {
                 </Card>
               </Col>
             </Row>
-          <AddContributionForm/>
         </>
     )
 }
