@@ -10,6 +10,8 @@ import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, CardHeader,
 
 function CommentDisplay() {
     const comments = COMMENTS;
+    
+
     shuffle(comments);
 
     //Shuffle Function for the comments
@@ -49,7 +51,7 @@ function CommentDisplay() {
                         {comment.text}
                     </ToastBody>
                 </Toast> */}
-
+            
                 <Card class="w-50 p-3 mb-2">
                     <CardHeader>
                         <Avatar size="50" src='https://retailx.com/wp-content/uploads/2019/12/iStock-476085198.jpg' />
@@ -58,6 +60,8 @@ function CommentDisplay() {
                     </CardHeader>
                     <CardBody>
                         <div>
+                            <div><b>Recommend:</b> {comment.rec}</div>
+                            
                             <Rating
                                 readonly
                                 emptySymbol={<FontAwesomeIcon size="md" color='#264653ff' icon={faStar} />}

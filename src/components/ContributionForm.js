@@ -10,14 +10,7 @@ export default class ContributionForm extends React.Component {
         <Form className="mb-5">
 
           <FormGroup>
-            <Label for="exampleSelect">Select Venue</Label>
-            <Input type="select" name="select" id="exampleSelect">
-                <option>{this.state.venue}</option>
-                <option>B</option>
-                <option>C</option>
-                <option>D</option>
-                <option>E</option>
-            </Input>
+            
         </FormGroup>
           
           <FormGroup>
