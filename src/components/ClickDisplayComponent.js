@@ -1,10 +1,11 @@
 import React from 'react';
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Jumbotron, Button, Container, Row } from 'reactstrap';
+import { Card, CardImg, CardBody, CardHeader, CardTitle, CardSubtitle, CardText, Jumbotron, Button, Container, Row } from 'reactstrap';
 import Rating from 'react-rating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import CommentDisplay from './CommentDisplayComponent';
 import Col from 'reactstrap/lib/Col';
+import AddContributionForm from './AddContributionForm';
 
 
 function ClickDisplay(props) {
@@ -27,7 +28,13 @@ function ClickDisplay(props) {
                 <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
             </Jumbotron>
             <Row className="justify-content-center">
-                    <Col></Col>
+                    <Col>
+                    <Card>
+                        <CardHeader>Header</CardHeader>
+                        <CardBody>Body</CardBody>
+                    </Card>
+                    <div style={{}}><AddContributionForm/></div>
+                    </Col>
                     <Col><CommentDisplay/></Col>
             </Row>
         </Container>

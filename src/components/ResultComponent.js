@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Rating from 'react-rating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faAssistiveListeningSystems, faAudioDescription, faClosedCaptioning, faStar } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -36,15 +36,55 @@ function SearchResults(props) {
 
     return (
         <React.Fragment>
-            <Card key={data.id}>
-                <CardBody className="searchResultCard">
-                    <CardImg src="https://via.placeholder.com/468x60?text=Place+Holder+Image" />
-                    <CardTitle className='mt-3'>{data.poi.name}</CardTitle>
-                    <CardSubtitle tag="h6" className="mb-2 text-muted">{data.poi.phone}</CardSubtitle>
-
-                    <CardText>ADA Title III Compliance: {randBool() === true ? 'Yes' : 'No'}</CardText>
-                    <CardText>Accommodation: {randAccom === true ? 'Yes' : 'No'}</CardText>
+            <div style={{display: "flex", justifyContent: "center" }}>
+            <Card key={data.id} style={{width: "80%"}} id="resultCard">
+            <CardBody className="searchResultCard" style={{padding: "1rem", paddingTop: 0}}>
+            <CardTitle className="mt-2" style={{fontSize: "2rem"}}>{data.poi.name}</CardTitle>
+            <hr/>
+                <Row>
+                
+                    <Col>
+                    
                     <CardText>
+                        <Rating
+                        readonly
+                        emptySymbol={<FontAwesomeIcon size="lg" color='#264653ff' icon={faStar} />}
+                        fullSymbol={<FontAwesomeIcon size="lg" color='#e9c46aff' icon={faStar} />} initialRating={randRating}
+                    />
+                    </CardText>
+                    <CardSubtitle tag="h6" className="mb-2 text-muted">{data.poi.phone}</CardSubtitle>
+                    <CardText>
+                        <FontAwesomeIcon size="lg" icon={faAssistiveListeningSystems}/> : {randAccom === true ? 'Hearing Accomodation' : 'No Hearing Accomodation'}
+                    </CardText>
+                    <CardText>
+                        <FontAwesomeIcon size="lg" icon={faClosedCaptioning}/> : {randAccom === true ? 'Has Closed Captioning' : 'No Closed Captioning'}
+                    </CardText>
+                    <CardText>
+                        <FontAwesomeIcon size="lg" icon={faAudioDescription}/> : {randAccom === true ? 'Has Audio Description' : 'No Audio Description'}
+                    </CardText>
+                    
+                    <Link
+                        to={{
+                            pathname: "/searchItemDisplay",
+                            state: { info: data, rating: randRating },
+                            hash: data.id
+                        }}>
+                        <Button className="btn-md btn-info">More Info</Button>
+                    </Link>
+                    </Col>
+                    <Col>
+                    <div style={{display: "flex", justifyContent: "center"}}>
+                        <CardImg className="" style={{width: "200px", height: "200px", objectFit: "cover"}}src="https://michaeldwhitt.com/wp-content/uploads/2021/09/130959244_10160679891353102_6674840354884251335_n.jpg" />
+                    </div>
+                    </Col>
+                </Row>
+                
+                    
+                    
+
+                    {/* <CardText>ADA Title III Compliance: {randBool() === true ? 'Yes' : 'No'}</CardText> */}
+                    
+                    {/* <CardText>
                         Accommodations Available:
                         {randAccom && randBool() === true ? <li className='ml-3'>Assisted Listening Device</li> : ''}
                         {randAccom && randBool() === true ? <li className='ml-3'>Closed Caption Device</li> : ''}
@@ -52,22 +92,11 @@ function SearchResults(props) {
                     <CardText>Accommodation Type:
                         {randAccom && randBool() === true ? <li className='ml-3'> CCD - Handheld, Cupholder, On-Screen, Glasses </li> : ''}
                         {randAccom && randBool() === true ? <li className='ml-3'> ALD - In-ear, Over-Ear,  Personal Hearing Device Pairing</li> : ''}
-                    </CardText>
-                    <CardText>Accommodation Rating: <Rating
-                        readonly
-                        emptySymbol={<FontAwesomeIcon size="lg" color='#264653ff' icon={faStar} />}
-                        fullSymbol={<FontAwesomeIcon size="lg" color='#e9c46aff' icon={faStar} />} initialRating={randRating}
-                    /></CardText>
-                    <Link
-                        to={{
-                            pathname: "/searchItemDisplay",
-                            state: { info: data, rating: randRating },
-                            hash: data.id
-                        }}>
-                        <Button className="btn-lg">More Info</Button>
-                    </Link>
+                    </CardText> */}
+                    
                 </CardBody>
             </Card>
+            </div>
         </React.Fragment>
     );
 }

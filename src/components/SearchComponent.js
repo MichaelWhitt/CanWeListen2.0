@@ -121,9 +121,7 @@ function SearchPage() {
                     <div id="mapContainer" className="mapContainer"></div>
                 </Col>
                 <Col md className="resultsList">
-                    <ListGroup>
-                        <DisplaySearch data={searchData} />
-                    </ListGroup>
+                    <DisplaySearch data={searchData} />  
                 </Col>
             </Row>
         </Container>

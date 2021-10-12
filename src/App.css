@@ -92,5 +92,16 @@ h2 {
   background-color: #808a9f; height: 60px;
 }
 
+#resultCard{
+  margin-top: 10px;
+ 
+}
+#resultCard:hover{
+  box-shadow: 0 0px 10px #aaa;
+  transition-duration: .2s;
+ 
+}
+
+
 
 
