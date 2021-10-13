@@ -8,6 +8,7 @@ import Footer from './FooterComponent';
 import Account from './AccountComponent';
 import SearchPage from './SearchComponent'
 import ClickDisplay from './ClickDisplayComponent';
+import { HomeComponent } from './HomePage';
 
 
 function Main(props) {
@@ -16,7 +17,7 @@ function Main(props) {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path='/home' />
+          <Route path='/home' render={() => <HomeComponent/>} />
           <Route exact path='/directory' render={() => <Directory />} />
           <Route path='/account' render={() => <Account/>}/>
           <Route exact path='/search' render={() => <SearchPage />} />

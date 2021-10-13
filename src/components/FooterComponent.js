@@ -14,7 +14,6 @@ function Footer(props) {
                 <li><Link to='/search'>Search</Link></li>
                 <li><Link to='/account'>Account</Link></li>
                 <li><Link to='/map'>Map</Link></li>
-              
           </Col>
           <Col>
             <img src="/assets/images/CanWeListen.png" alt="cwl" width="90" height="90" />

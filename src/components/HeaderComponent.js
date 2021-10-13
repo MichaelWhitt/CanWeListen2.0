@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavItem, Jumbotron } from 'reactstrap';
+import { Nav, NavItem, Jumbotron, Row, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 function Header(props) {
@@ -10,21 +10,26 @@ function Header(props) {
       
      
         <Nav className="font-weight-bold headerNav sticky-top">
-          <NavItem className="mr-3">
-            <NavLink to={"/home"}>Home</NavLink>
-          </NavItem>
-          <NavItem className="mr-3">
-            <NavLink to={"/search"}>Search</NavLink>
-          </NavItem>
-          <NavItem className="mr-3">
-            <NavLink to={"/account"}>Account</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to={"/directory"}>Directory</NavLink>
-          </NavItem>
+          <Col>
+              <NavItem className="mr-3">
+                <NavLink to={"/home"} style={{fontSize: "1.2rem", color: "black"}}>Can We Listen? </NavLink>
+              </NavItem>
+          </Col>
+          <Col style={{width: "100%", display: "flex", justifyContent: "right"}}>
+              <NavItem className="mr-3">
+                <NavLink to={"/home"}>Home</NavLink>
+              </NavItem>
+              <NavItem className="mr-3 ">
+                <NavLink to={"/search"}>Search</NavLink>
+              </NavItem>
+              <NavItem className="mr-3">
+                <NavLink to={"/account"}>Account</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to={"/directory"}>Directory</NavLink>
+              </NavItem>
+            </Col>
         </Nav>
-      
-      
     </React.Fragment>
   );
 }
