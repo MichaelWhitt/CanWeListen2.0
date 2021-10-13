@@ -1,6 +1,8 @@
 import React from 'react';
 import { Nav, NavItem, Jumbotron, Row, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAssistiveListeningSystems } from '@fortawesome/free-solid-svg-icons';
 
 function Header(props) {
 
@@ -10,7 +12,7 @@ function Header(props) {
         <Nav className="font-weight-bold headerNav sticky-top">
           <Col>
               <NavItem className="mr-3">
-                <NavLink to={"/home"} style={{fontSize: "1.2rem"}}>Can We Listen? </NavLink>
+                <NavLink to={"/home"} style={{fontSize: "1.2rem"}}><FontAwesomeIcon size="lg" icon={faAssistiveListeningSystems}/> Can We Listen? </NavLink>
               </NavItem>
           </Col>
           <Col style={{width: "100%", display: "flex", justifyContent: "right"}}>
