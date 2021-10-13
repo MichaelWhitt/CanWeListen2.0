@@ -15,8 +15,6 @@ $gradient-top-left: linear-gradient(225deg, #264653ff, #2a9d8fff, #e9c46aff, #f4
 $gradient-bottom-left: linear-gradient(315deg, #264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff);
 $gradient-radial: radial-gradient(#264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff); */
 
-
-
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -24,10 +22,20 @@ body {
 .headerNav{
   padding-left: 10px;
   padding: 1rem !important;
-  background: #a8ff78;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #9b0008;
+}
 
+.headerNav a{
+  color: white
+}
+
+#homeSection {
+  background-position: bottom right;
+  position: relative;
+  height: calc(100vh - 60.17px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../src/shared/images/img1.jpg");
 }
 
 h1, h2, h3, .card-body>.card-title {

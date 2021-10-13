@@ -7,12 +7,10 @@ function Header(props) {
 
   return (
     <React.Fragment>
-      
-     
         <Nav className="font-weight-bold headerNav sticky-top">
           <Col>
               <NavItem className="mr-3">
-                <NavLink to={"/home"} style={{fontSize: "1.2rem", color: "black"}}>Can We Listen? </NavLink>
+                <NavLink to={"/home"} style={{fontSize: "1.2rem"}}>Can We Listen? </NavLink>
               </NavItem>
           </Col>
           <Col style={{width: "100%", display: "flex", justifyContent: "right"}}>
