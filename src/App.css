@@ -15,8 +15,19 @@ $gradient-top-left: linear-gradient(225deg, #264653ff, #2a9d8fff, #e9c46aff, #f4
 $gradient-bottom-left: linear-gradient(315deg, #264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff);
 $gradient-radial: radial-gradient(#264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff); */
 
+
+
 body {
   font-family: "Open Sans", sans-serif;
+}
+
+.headerNav{
+  padding-left: 10px;
+  padding: 1.5rem !important;
+  background: #a8ff78;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 h1, h2, h3, .card-body>.card-title {
@@ -43,20 +54,13 @@ h2 {
   min-height: 200px;
 }
 
-.headerJumbo {
-  height: 10vh;
-  margin: 0;
-  padding: 1rem;
-  background: linear-gradient(120deg, #264653ff, #2a9d8fff);
-  color: #264653ff;
-  border-bottom: 3px solid white;
-}
 
 .siteFooter {
-  background: linear-gradient(120deg, #264653ff, #2a9d8fff);
+  background: #a8ff78;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin-bottom: 0 !important;
-  border-top: 3px solid white;
-  border-bottom: none;
+  
 }
 
 .mapContainer {

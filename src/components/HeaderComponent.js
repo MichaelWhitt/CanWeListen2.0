@@ -7,22 +7,24 @@ function Header(props) {
 
   return (
     <React.Fragment>
-      <Jumbotron fluid className="mb-0 headerJumbo">
-        <Nav className="font-weight-bold py-4 px-2 mb-4">
-          <NavItem>
+      
+     
+        <Nav className="font-weight-bold headerNav sticky-top">
+          <NavItem className="mr-3">
             <NavLink to={"/home"}>Home</NavLink>
           </NavItem>
-          <NavItem>
+          <NavItem className="mr-3">
             <NavLink to={"/search"}>Search</NavLink>
           </NavItem>
-          <NavItem>
+          <NavItem className="mr-3">
             <NavLink to={"/account"}>Account</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to={"/directory"}>Directory</NavLink>
           </NavItem>
         </Nav>
-      </Jumbotron>
+      
+      
     </React.Fragment>
   );
 }
