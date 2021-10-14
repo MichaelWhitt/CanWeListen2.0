@@ -17,7 +17,7 @@ function Main(props) {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path='/home' render={() => <HomeComponent/>} />
+          <Route exact path='/' render={() => <HomeComponent/>} />
           <Route exact path='/directory' render={() => <Directory />} />
           <Route path='/account' render={() => <Account/>}/>
           <Route exact path='/search' render={() => <SearchPage />} />
