@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Col, Card, Row, CardHeader, CardBody, Jumbotron, Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 export const HomeComponent = () => {
 
@@ -9,7 +10,9 @@ export const HomeComponent = () => {
             <div id="homeText2">Find and rate local theater hearing accommodations</div>
             
                 {/* <Button id="homeButton" className="btn-md btn-success" to={"/search"}>Get Started</Button> */}
-                <a id="homeButton" className="btn-md btn-success" href="/search">Get Started</a>
+                
+                    <Link to={'/search'}>Get Started</Link>
+                
             
         </div>
         
