@@ -63,7 +63,7 @@ body {
   top: 20%;
 }
 
-#homeLink{
+#homeButton{
   position: absolute;
   z-index: 1;
   left: 15%;
