@@ -70,6 +70,13 @@ body {
   top: 25%;
 }
 
+#homeButton a {
+  color: white;
+}
+#homeButton a:hover {
+  text-decoration: none;
+}
+
 h1, h2, h3, .card-body>.card-title {
   font-family: "Copperplate", fantasy;
 }
