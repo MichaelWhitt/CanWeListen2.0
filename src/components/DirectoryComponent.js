@@ -56,7 +56,7 @@ class Directory extends Component {
                         {directory}
                     </div>
                 </div>
-                <Footer />
+                
             </div>
         );
     }
