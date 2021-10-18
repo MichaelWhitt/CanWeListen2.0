@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Footer from './FooterComponent';
+
 
 class Directory extends Component {
     constructor(props) {
@@ -56,7 +56,6 @@ class Directory extends Component {
                         {directory}
                     </div>
                 </div>
-                
             </div>
         );
     }

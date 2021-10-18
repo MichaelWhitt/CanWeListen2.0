@@ -4,7 +4,6 @@ import Header from './HeaderComponent';
 import { Route } from 'react-router';
 import { Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import Footer from './FooterComponent';
 import Account from './AccountComponent';
 import SearchPage from './SearchComponent'
 import ClickDisplay from './ClickDisplayComponent';
