@@ -1,17 +1,16 @@
 import React from 'react';
-import { Card, CardImg, CardBody, CardHeader, CardTitle, CardSubtitle, CardText, Jumbotron, Button, Container, Row } from 'reactstrap';
+import { Jumbotron, Container, Row } from 'reactstrap';
 import Rating from 'react-rating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import CommentDisplay from './CommentDisplayComponent';
-import Col from 'reactstrap/lib/Col';
-import AddContributionForm from './AddContributionForm';
+import FormAndComments from './DisplayFormComments';
 
 
 function ClickDisplay(props) {
     const data = props.location.state.info;
     const rating = props.location.state.rating;
-    console.log(data);
+    const randAccom = props.location.state.randAccom;
+    // console.log(data);
 
     return (
         <Container>
@@ -28,14 +27,7 @@ function ClickDisplay(props) {
                 <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
             </Jumbotron>
             <Row className="justify-content-center">
-                    <Col>
-                    <Card>
-                        <CardHeader>Header</CardHeader>
-                        <CardBody>Body</CardBody>
-                    </Card>
-                    <div style={{}}><AddContributionForm/></div>
-                    </Col>
-                    <Col><CommentDisplay/></Col>
+                <FormAndComments data={props} ranrandAccom={randAccom}/>
             </Row>
         </Container>
     );

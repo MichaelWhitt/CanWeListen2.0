@@ -4,6 +4,7 @@ import AccountCard from "./AccountCard";
 import AccountInfo from "./AccountInfo";
 import AccountContributions from "./AccountContributions";
 import AccountInfoTable from "./AccountInfoTable";
+import React from "react";
 
 
 export const emailText = document.getElementById("emailText");
@@ -22,33 +23,44 @@ export const linkedInDiv = document.getElementById("linkedInDiv");
 export const saveLinkedInBtn = document.createElement("button");
 export const linkedInTextDiv = document.getElementById("linkedInTextDiv");
 
+function Account(props) {
 
+    if (props) {
+        return (
+            <React.Fragment>
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-4">
+                            <AccountCard />
+                        </div>
+                        <div class="col col-8">
+                            <AccountInfoTable />
+                            {/* <AccountInfo/> */}
+                            <AccountContributions />
+                        </div>
 
-
-
-
-
-function Account (props){
-
-
-    return(
-    <>
+                    </div>
+                </div>
+            </React.Fragment>
+        )
+    }
+    else {
+        <React.Fragment>
             <div class="container">
                 <div class="row">
                     <div class="col col-4">
-                        <AccountCard/>
-                          
+                        <AccountCard />
                     </div>
                     <div class="col col-8">
-                        <AccountInfoTable/>
+                        <AccountInfoTable />
                         {/* <AccountInfo/> */}
-                        <AccountContributions/>
+                        <AccountContributions />
                     </div>
-                    
-                    </div>
-                </div>   
-</>
-    )
+
+                </div>
+            </div>
+        </React.Fragment>
+    }
 }
 
 export default Account;

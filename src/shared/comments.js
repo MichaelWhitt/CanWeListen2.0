@@ -1,3 +1,4 @@
+
 export const COMMENTS =
     [
         {
@@ -100,3 +101,6 @@ export const COMMENTS =
             rec: "No"
         }
     ]
+
+localStorage.setItem('comments', JSON.stringify(COMMENTS));
+

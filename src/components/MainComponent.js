@@ -20,6 +20,7 @@ function Main(props) {
           <Route exact path='/' render={() => <HomeComponent/>} />
           <Route exact path='/directory' render={() => <Directory />} />
           <Route path='/account' render={() => <Account/>}/>
+          <Route path='/userpage' component={Account}/>
           <Route exact path='/search' render={() => <SearchPage />} />
           <Route exact path='/searchItemDisplay' component={ClickDisplay} />
         </Switch>
