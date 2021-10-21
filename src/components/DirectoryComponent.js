@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faGithub} from '@fortawesome/react-fontawesome'
+import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 
 
@@ -18,7 +18,8 @@ class Directory extends Component {
                 phone: 1-233-645-9087,
                 featured: true,
                 email: "fakeemail@fakesite.com",
-                github: "https://github.com/MichaelWhitt"
+                github: "https://github.com/MichaelWhitt",
+                linkedIn: "https://www.linkedin.com/in/michaeldwhitt/"
             },
             {
                 id: 1,
@@ -28,7 +29,8 @@ class Directory extends Component {
                 phone: 1-233-645-9087,
                 featured: true,
                 email: "fakeemail@fakesite.com",
-                github: "https://github.com/jacobmooney"
+                github: "https://github.com/jacobmooney",
+                linkedIn: "https://www.linkedin.com/in/jacob-mooney-b6433b211/"
             },
             {
                 id: 2,
@@ -38,7 +40,8 @@ class Directory extends Component {
                 phone: 1-233-645-9087,
                 featured: true,
                 email: "fakeemail@fakesite.com",
-                github: "https://github.com/andymcadams-dev"
+                github: "https://github.com/andymcadams-dev",
+                linkedIn: "https://www.linkedin.com/in/andy-mcadams-a10192a2/"
             },
             
         ]
@@ -48,22 +51,27 @@ class Directory extends Component {
       render() {
         const directory = this.state.accounts.map(account => {
             return (
-                <div key={account.id} className="col">
-                    <img src={account.image} alt={account.name} />
-                    <h2>{account.name}</h2>
-                    <div>{account.description}</div>
-                    <FontAwesomeIcon icon="fa-brands fa-github"/>
-                    <div>{account.github}</div>
+                <div className="row">
+                    <div className="col col-sm-4">
+                        <img src={account.image} alt={account.name} />
+                    </div>
+                    <div className="col col-sm-4" style={{"margin-top": 60}}>
+                        <h2>{account.name}</h2>
+                        <div>{account.description}</div>
+                        <div style={{ "margin-top": 10}}>
+                            <a href={account.github} target="_blank" style={{"padding-right": 30}}><FontAwesomeIcon icon={faGithub} size="3x" /></a>
+                            <a href={account.linkedIn} target="_blank"><FontAwesomeIcon icon={faLinkedin} size="3x" /></a>
+                        </div>
+                    </div>
                 </div>
+
             );
         });
 
         return (
             <div>
                 <div className="container">
-                    <div className="row">
                         {directory}
-                    </div>
                 </div>
             </div>
         );
