@@ -73,7 +73,7 @@ function SearchResults(props) {
                             </Col>
                             <Col>
                                 <div style={{ display: "flex", justifyContent: "center" }}>
-                                    <CardImg className="" style={{ width: "200px", height: "200px", objectFit: "cover" }} src="https://michaeldwhitt.com/wp-content/uploads/2021/09/130959244_10160679891353102_6674840354884251335_n.jpg" />
+                                    <CardImg className="" style={{ width: "200px", height: "200px", objectFit: "cover" }} src="https://source.unsplash.com/random/?movie-theater" />
                                 </div>
                             </Col>
                         </Row>
