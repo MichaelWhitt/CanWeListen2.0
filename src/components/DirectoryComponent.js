@@ -55,7 +55,7 @@ class Directory extends Component {
                     <div className="col col-sm-4">
                         <img src={account.image} alt={account.name} />
                     </div>
-                    <div className="col col-sm-4" style={{"margin-top": 60}}>
+                    <div className="col col-sm-4" style={{"margin-top": 40}}>
                         <h2>{account.name}</h2>
                         <div>{account.description}</div>
                         <div style={{ "margin-top": 10}}>
