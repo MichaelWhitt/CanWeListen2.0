@@ -26,7 +26,7 @@ function Header(props) {
                 <NavLink to={"/account"}>Account</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to={"/aboutus"}>Directory</NavLink>
+                <NavLink to={"/aboutus"}>About Us</NavLink>
               </NavItem>
             </Col>
         </Nav>
