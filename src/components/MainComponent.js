@@ -17,7 +17,7 @@ function Main(props) {
         <Header />
         <Switch>
           <Route exact path='/' render={() => <HomeComponent/>} />
-          <Route exact path='/directory' render={() => <Directory />} />
+          <Route exact path='/aboutus' render={() => <Directory />} />
           <Route path='/account' render={() => <Account/>}/>
           <Route path='/userpage' component={Account}/>
           <Route exact path='/search' render={() => <SearchPage />} />

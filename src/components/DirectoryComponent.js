@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faGithub} from '@fortawesome/react-fontawesome'
+
+
 
 
 class Directory extends Component {
@@ -8,30 +12,33 @@ class Directory extends Component {
           accounts: [
             {
                 id: 0,
-                name: "User One",
-                image: "/assets/images/MichaelWhitt.png",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+                name: "Michael Whitt",
+                image: "/assets/images/i2.jpg",
+                description: "Chief Executive Officer",
                 phone: 1-233-645-9087,
                 featured: true,
-                email: "fakeemail@fakesite.com"
+                email: "fakeemail@fakesite.com",
+                github: "https://github.com/MichaelWhitt"
             },
             {
                 id: 1,
-                name: "User Two",
-                image: "/assets/images/JacobMooney.png",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+                name: "Jacob Mooney",
+                image: "/assets/images/i3.jfif",
+                description: "Chief Technology Officer",
                 phone: 1-233-645-9087,
                 featured: true,
-                email: "fakeemail@fakesite.com"
+                email: "fakeemail@fakesite.com",
+                github: "https://github.com/jacobmooney"
             },
             {
                 id: 2,
-                name: "User Three",
-                image: "/assets/images/AndyMcAdams.png",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+                name: "Andy McAdams",
+                image: "/assets/images/i1.jfif",
+                description: "Chief Information Officer",
                 phone: 1-233-645-9087,
                 featured: true,
-                email: "fakeemail@fakesite.com"
+                email: "fakeemail@fakesite.com",
+                github: "https://github.com/andymcadams-dev"
             },
             
         ]
@@ -44,7 +51,9 @@ class Directory extends Component {
                 <div key={account.id} className="col">
                     <img src={account.image} alt={account.name} />
                     <h2>{account.name}</h2>
-                    <p>{account.description}</p>
+                    <div>{account.description}</div>
+                    <FontAwesomeIcon icon="fa-brands fa-github"/>
+                    <div>{account.github}</div>
                 </div>
             );
         });

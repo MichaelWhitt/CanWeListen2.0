@@ -144,6 +144,16 @@ h2 {
  
 }
 
+#root > div > div > div > div > div > img {
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 0 5px 5px #aaa;
+  border-radius: 25px;
+}
 
+#root > div > div > div > div > div {
+  padding: 0;
+  margin: 10px;
+}
 
 
