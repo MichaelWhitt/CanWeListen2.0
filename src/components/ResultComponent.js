@@ -4,21 +4,28 @@ import { Link } from 'react-router-dom';
 import Rating from 'react-rating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAssistiveListeningSystems, faAudioDescription, faClosedCaptioning, faStar } from '@fortawesome/free-solid-svg-icons';
+import {cinemaPhotos} from '../shared/fakePhotos';
+
+
 
 
 
 function SearchResults(props) {
+    //console.log(props.url)
     // console.log(props.data);
+    const propsId = props.data
+    console.log(propsId)
     const data = props.data;
 
     //Current rands for generating location info
     const randRating = Math.floor((Math.random() * 5) + 1);
-    //Decides if there is accommodations randomly.
+    //Decides if there is accommodations randomly
     const randAccom = Math.random() < 0.6;
 
     function randBool() {
         return Math.random() < 0.6;
     }
+
 
 
     //-Search for additional details, but most results don't have the needed info ID number-
@@ -73,7 +80,7 @@ function SearchResults(props) {
                             </Col>
                             <Col>
                                 <div style={{ display: "flex", justifyContent: "center" }}>
-                                    <CardImg className="" style={{ width: "200px", height: "200px", objectFit: "cover" }} src="https://source.unsplash.com/random/?movie-theater" />
+                                    <CardImg style={{ width: "200px", height: "200px", objectFit: "cover" }} src={cinemaPhotos[(randRating)%cinemaPhotos.length]}  />
                                 </div>
                             </Col>
                         </Row>

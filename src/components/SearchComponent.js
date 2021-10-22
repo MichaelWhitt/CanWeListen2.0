@@ -15,11 +15,14 @@ import { faHandPointLeft } from '@fortawesome/free-solid-svg-icons';
 
 function DisplaySearch({ data }) {
     // console.log(data);
+    const url = "https://source.unsplash.com/random/?movie-theater"
+    
+
     if (data.length > 0) {
         return data.map((searchItem) => {
             // console.log(searchItem);
             return (
-                <SearchResults key={searchItem.id} data={searchItem} />
+                <SearchResults key={searchItem.id} data={searchItem} url={url}/>
             );
         })
     }
@@ -43,6 +46,7 @@ function SearchPage() {
     //tt.setProductInfo('<your-product-name>', '<your-product-version>');
 
     useEffect(() => {
+        
         const createdMap = tt.map({
             key: APIKEY,
             container: "mapContainer",
