@@ -8,9 +8,9 @@ export const HomeComponent = () => {
         <div id="homeSection">
             <div id="homeText">A Hearing Accessibility App for Hearing-Impaired Movie-Goers</div>
             <div id="homeText2">Find and rate local theater hearing accommodations</div>
-            <Button id="homeButton" className="btn-md btn-success" >
-                <Link to={'/search'}>Get Started</Link>
-            </Button>
+            
+                <Link to={'/search'}><Button id="homeButton" className="btn-md btn-success" >Get Started</Button></Link>
+            
         </div>
 
     )

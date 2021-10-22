@@ -100,12 +100,24 @@ function SearchPage() {
 
 
     const search = function () {
-        services.poiSearch({
-            key: APIKEY,
-            query: searchName,
-            boundingBox: map.getBounds()
-        })
-            .then(handleResults)
+        
+        if (searchName){
+            services.poiSearch({
+                key: APIKEY,
+                query: searchName,
+                boundingBox: map.getBounds()
+            })
+                .then(handleResults)
+        } else {
+            services.poiSearch({
+                key: APIKEY,
+                query: "Cinema",
+                boundingBox: map.getBounds()
+            })
+                .then(handleResults)
+        }
+        
+        
     }
 
     const handleInputChange = (event) => {
