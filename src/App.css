@@ -13,7 +13,7 @@ body {
 .headerNav{
   padding-left: 10px;
   padding: 1rem !important;
-  background-color: #9b0008;
+  background-color: #6D1E20;
 }
 
 .headerNav a{
@@ -154,6 +154,18 @@ h2 {
 #root > div > div > div > div > div {
   padding: 0;
   margin: 10px;
+}
+
+#lighthouseIcon{
+  font-size: 30rem;
+  color:#6D1E20;
+  justify-self: center;
+}
+
+#journey{
+  font-size: 6rem;
+  color:#6D1E20;
+  justify-self: center;
 }
 
 

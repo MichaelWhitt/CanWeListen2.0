@@ -7,6 +7,9 @@ import tt from '@tomtom-international/web-sdk-maps';
 import { services } from '@tomtom-international/web-sdk-services';
 import { Row, Col, Container, ListGroup } from 'reactstrap';
 import SearchResults from './ResultComponent';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWatchmanMonitoring } from '@fortawesome/free-brands-svg-icons';
+import { faHandPointLeft } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -94,6 +97,8 @@ function SearchPage() {
     }
 
     //"Cinema" - most accurate term for TomTom
+
+
     const search = function () {
         services.poiSearch({
             key: APIKEY,
@@ -120,7 +125,11 @@ function SearchPage() {
                     <div id="mapContainer" className="mapContainer"></div>
                 </Col>
                 <Col md className="resultsList">
-                    <DisplaySearch data={searchData} />  
+                    { searchData.length === 0 ? <div style={{textAlign: 'center'}}>
+                        <FontAwesomeIcon icon={faWatchmanMonitoring}  id="lighthouseIcon"/> 
+                        <div id="journey"><FontAwesomeIcon icon={faHandPointLeft} /> Start Your Journey</div>
+                    </div>
+                    : <DisplaySearch data={searchData} />  }
                 </Col>
             </Row>
         </Container>
