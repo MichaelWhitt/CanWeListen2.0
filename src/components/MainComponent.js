@@ -18,9 +18,9 @@ function Main(props) {
         <Header />
         <Switch>
           <Route exact path='/' render={() => <HomeComponent/>} />
-          <Route exact path='/directory' render={() => <Directory />} />
-          <Route exact path='/account' render={() => <Account/>}/>
-          <Route exact path='/userpage' component={UserAccount}/>
+          <Route exact path='/aboutus' render={() => <Directory />} />
+          <Route path='/account' render={() => <Account/>}/>
+          <Route path='/userpage' component={Account}/>
           <Route exact path='/search' render={() => <SearchPage />} />
           <Route exact path='/searchItemDisplay' component={ClickDisplay} />
         </Switch>
