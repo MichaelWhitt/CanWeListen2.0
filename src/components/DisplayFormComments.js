@@ -29,23 +29,36 @@ class FormAndComments extends Component {
 
     handleClick = (e) => {
         e.preventDefault()
+
         //Grab local storage
         const localStoreComments = JSON.parse(localStorage.getItem('comments'));
         // console.log(localStoreComments);
+
         //Copy current state info
-        const { storageComments, ...newComment } = this.state;
+        const newComment = {
+            id: this.state.id,
+            level: this.state.level,
+            rating: this.state.rating,
+            text: this.state.text,
+            author: this.state.author,
+            date: this.state.date,
+            rec: this.state.rec
+        };
         // console.log('New Created Comment: ' + newComment);
+
         //Add new comment into the storage copy
         localStoreComments.unshift(newComment);
         // console.log(localStoreComments);
+
         //Push updated comment array into the store
         localStorage.setItem('comments', JSON.stringify(localStoreComments));
+
         //Update the comments stored in the state
         this.setState(this.state.storageComments = localStoreComments);
     };
 
+
     render() {
-        console.log(this.props);
         const randAccom = this.props.randAccom;
         const currComments = this.state.storageComments;
         return (

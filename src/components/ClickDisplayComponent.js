@@ -24,7 +24,7 @@ function ClickDisplay(props) {
                     />
                 </p>
                 <hr className="my-2 lead" />
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p></p>
             </Jumbotron>
             <Row className="justify-content-center">
                 <FormAndComments data={props} ranrandAccom={randAccom}/>

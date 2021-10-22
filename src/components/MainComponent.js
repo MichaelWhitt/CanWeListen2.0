@@ -8,6 +8,7 @@ import Account from './AccountComponent';
 import SearchPage from './SearchComponent'
 import ClickDisplay from './ClickDisplayComponent';
 import { HomeComponent } from './HomePage';
+import UserAccount from './UserAccount';
 
 
 function Main(props) {
@@ -18,8 +19,8 @@ function Main(props) {
         <Switch>
           <Route exact path='/' render={() => <HomeComponent/>} />
           <Route exact path='/directory' render={() => <Directory />} />
-          <Route path='/account' render={() => <Account/>}/>
-          <Route path='/userpage' component={Account}/>
+          <Route exact path='/account' render={() => <Account/>}/>
+          <Route exact path='/userpage' component={UserAccount}/>
           <Route exact path='/search' render={() => <SearchPage />} />
           <Route exact path='/searchItemDisplay' component={ClickDisplay} />
         </Switch>
