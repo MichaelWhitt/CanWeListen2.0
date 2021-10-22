@@ -93,7 +93,6 @@ function SearchPage() {
         }
     }
 
-
     //"Cinema" - most accurate term for TomTom
     const search = function () {
         services.poiSearch({

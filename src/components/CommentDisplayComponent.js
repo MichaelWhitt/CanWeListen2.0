@@ -4,28 +4,10 @@ import Avatar from 'react-avatar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { COMMENTS } from '../shared/comments';
 import { Card, CardBody, CardTitle, CardHeader, CardFooter } from 'reactstrap';
 
 
 function CommentDisplay(props) {
-    // shuffle(comments);
-
-    //Shuffle Function for the comments
-    // function shuffle(array) {
-    //     let currentIndex = array.length, randomIndex;
-    //     // While there remain elements to shuffle...
-    //     while (currentIndex != 0) {
-    //         // Pick a remaining element...
-    //         randomIndex = Math.floor(Math.random() * currentIndex);
-    //         currentIndex--;
-    //         // And swap it with the current element.
-    //         [array[currentIndex], array[randomIndex]] =
-    //             [array[randomIndex], array[currentIndex]];
-    //     }
-    //     return array;
-    // }
-
     return (
         props.comments.map(comment => (
             <React.Fragment>
@@ -36,10 +18,9 @@ function CommentDisplay(props) {
                             <Link
                                 to={{
                                     pathname: "/userpage",
-                                    state: { data:comment },
+                                    state: { data: comment },
                                     hash: comment.author
                                 }}>
-
                                 {comment.author}
                             </Link>
                         </CardTitle>

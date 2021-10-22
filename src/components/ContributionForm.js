@@ -6,12 +6,15 @@ export default class ContributionForm extends React.Component {
   render() {
     return (
       <Form className="mb-5" >
+
         <FormGroup>
         </FormGroup>
+
         <FormGroup>
           <Label for="exampleText"><b>User Name</b></Label>
           <Input onChange={this.props.handleChange} placeholder='User Name' type="text" name="author" id="authorName" minLength="4" maxLength="13" required/>
         </FormGroup>
+
         <FormGroup>
           <Label for="exampleCheckbox"><b>Recommend?</b></Label>
           <div >
@@ -40,6 +43,7 @@ export default class ContributionForm extends React.Component {
           <Label for="exampleText"><b>Comments</b></Label>
           <Input onChange={this.props.handleChange} type="textarea" name="text" id="exampleText" />
         </FormGroup>
+        
         <Button color="success" onClick={this.props.handleClick}>Submit</Button>
       </Form>
     );

@@ -18,7 +18,6 @@ function UserAccount(props) {
                     <div class="col col-8">
                         <UserInfoTable data={data} />
                         {/* <AccountInfo/> */}
-
                         <hr />
                         <h2 className="mt-3 text-center">Recent Contributions</h2>
                         <Row className="mt-2">
