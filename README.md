@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with Can We Listen
+
+We wanted to create a project that helps hearing impaired people find proper accomodations in the movie realm.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
