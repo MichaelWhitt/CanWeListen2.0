@@ -6,14 +6,13 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { Card, CardBody, CardTitle, CardHeader, CardFooter } from 'reactstrap';
 
-
 function CommentDisplay(props) {
     return (
         props.comments.map(comment => (
             <React.Fragment>
                 <Card class="w-50 p-3 mb-2">
                     <CardHeader>
-                        <Avatar size="50" src='https://retailx.com/wp-content/uploads/2019/12/iStock-476085198.jpg' />
+                        <Avatar size="50" src={`https://ui-avatars.com/api/?background=6D1E20&color=f0e9e9&name=${comment.author}&size=50`} />
                         <CardTitle className='font-weight-bold'>
                             <Link
                                 to={{
@@ -41,7 +40,7 @@ function CommentDisplay(props) {
                     <CardFooter className="text-right bg-white p-1">Posted: {comment.date}</CardFooter>
                 </Card>
             </React.Fragment>
-        ))
+        )).slice(0,4)
     );
 }
 

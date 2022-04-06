@@ -2,7 +2,6 @@ import React from "react";
 import { Card, CardTitle, CardHeader, CardBody, CardFooter, Col } from 'reactstrap';
 import { COMMENTS } from "../shared/comments";
 import Rating from 'react-rating';
-import Avatar from 'react-avatar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,7 +9,6 @@ function UserContributions(props) {
   const comments = COMMENTS;
   const usersComments = comments.filter(item => item.author === props.author);
   const mapedComments = usersComments.map(comment => {
-    // console.log(comment);
     return (
       <React.Fragment>
         <Col sm="4" className="mt-2">

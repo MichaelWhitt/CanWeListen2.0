@@ -1,12 +1,8 @@
 import React from "react";
-import AddContributionForm from "./AddContributionForm";
 import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
-import { fakeComment } from "../shared/fakeComment";
 
 
 const AccountContributions = () => {
-
-
   return (
     <>
       <hr />

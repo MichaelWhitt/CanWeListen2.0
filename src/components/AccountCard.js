@@ -44,7 +44,7 @@ class AccountCard extends React.Component {
 
         <Card className="card">
             <CardHeader style={{textAlign: "center"}}>
-                <img id="acctPageProfilePic" width="150px" height="150px" src="https://retailx.com/wp-content/uploads/2019/12/iStock-476085198.jpg"/>
+                <img id="acctPageProfilePic" width="150px" height="150px" src={`https://ui-avatars.com/api/?background=6D1E20&color=f0e9e9&name=${"Michael Whitt"}&size=150`}/>
                 <div id="acctPageUsername">Username <a href="#" style={{color:"#3d2b56"}}><i class="fas fa-edit"></i></a></div>
             </CardHeader>
             <CardBody class="card-body">

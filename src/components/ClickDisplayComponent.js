@@ -10,7 +10,6 @@ function ClickDisplay(props) {
     const data = props.location.state.info;
     const rating = props.location.state.rating;
     const randAccom = props.location.state.randAccom;
-    // console.log(data);
 
     return (
         <Container>
@@ -27,7 +26,7 @@ function ClickDisplay(props) {
                 <p></p>
             </Jumbotron>
             <Row className="justify-content-center">
-                <FormAndComments data={props} ranrandAccom={randAccom}/>
+                <FormAndComments data={props} randAccom={randAccom}/>
             </Row>
         </Container>
     );

@@ -35,13 +35,8 @@ export default class ContributionForm extends React.Component {
         </FormGroup>
 
         <FormGroup>
-          <Label for="exampleCustomFileBrowser"><b>Attach Photo?</b></Label>
-          <CustomInput type="file" id="exampleCustomFileBrowser" name="customFile" />
-        </FormGroup>
-
-        <FormGroup>
-          <Label for="exampleText"><b>Comments</b></Label>
-          <Input onChange={this.props.handleChange} type="textarea" name="text" id="exampleText" />
+          <Label for="exampleText"><b>Comment</b></Label>
+          <Input onChange={this.props.handleChange} type="textarea" name="text" id="exampleText" placeholder='Tell us about your experience...'/>
         </FormGroup>
         
         <Button color="success" onClick={this.props.handleClick}>Submit</Button>

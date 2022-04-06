@@ -33,7 +33,6 @@ function Account() {
                 </div>
                 <div class="col col-8">
                     <AccountInfoTable />
-                    {/* <AccountInfo/> */}
                     <AccountContributions />
                 </div>
             </div>

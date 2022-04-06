@@ -47,7 +47,7 @@ class Directory extends Component {
     render() {
         const directory = this.state.accounts.map(account => {
             return (
-                <div className="row">
+                <div className="row justify-content-around">
                     <div className="col col-sm-4">
                         <img src={account.image} alt={account.name} />
                     </div>
@@ -66,7 +66,7 @@ class Directory extends Component {
 
         return (
             <div>
-                <div className="container">
+                <div className="container mt-5">
                     {directory}
                 </div>
             </div>

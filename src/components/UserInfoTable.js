@@ -2,7 +2,6 @@ import React from "react";
 import { Row, Col, Container } from "reactstrap";
 
 function UserInfoTable(props) {
-    // console.log(props.data)
     const data = props.data
     return (
         <Row>

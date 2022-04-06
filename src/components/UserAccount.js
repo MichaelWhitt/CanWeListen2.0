@@ -7,7 +7,6 @@ import { Row } from 'reactstrap';
 
 function UserAccount(props) {
     const data = props.location.state.data;
-    // console.log(data);
     return (
         <React.Fragment>
             <div class="container">

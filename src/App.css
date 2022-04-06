@@ -94,7 +94,7 @@ h2 {
 
 
 .mapContainer {
-  height: 100vh !important;
+  height: 90vh !important;
   position: absolute;
   width: 100%;
   padding-left: 0px;
@@ -102,7 +102,7 @@ h2 {
 }
 
 .searchRow {
-  height: 100vh;
+  height: 90vh;
 }
 
 .searchResultCard {
